@@ -63,7 +63,15 @@ const ProjectShowcase = () => {
         
         <div className="mt-16 text-center">
           <p className="text-xl mb-6">Want something like this? Let's talk.</p>
-          <Button className="bg-mintGreen text-dark hover:bg-mintGreen/90 glow-effect">
+          <Button 
+            onClick={() => {
+              const formElement = document.getElementById('consultation-form');
+              if (formElement) {
+                formElement.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="bg-mintGreen text-dark hover:bg-mintGreen/90 glow-effect"
+          >
             Book a Free Strategy Call
           </Button>
         </div>
