@@ -271,7 +271,11 @@ const ConsultationForm = () => {
                 <FormItem>
                   <FormLabel>Preferred call time (optional)</FormLabel>
                   <FormControl>
-                    <Input type="datetime-local" {...field} className="bg-dark" />
+                    <Input 
+                      type="datetime-local" 
+                      {...field} 
+                      className="bg-dark [&::-webkit-calendar-picker-indicator]:filter [&::-webkit-calendar-picker-indicator]:invert" 
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

@@ -3,6 +3,13 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
+  const scrollToForm = () => {
+    const formElement = document.getElementById('consultation-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="min-h-[85vh] flex flex-col justify-center relative">
       <div className="section-container">
@@ -21,6 +28,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="bg-mintGreen text-dark hover:bg-mintGreen/90 glow-effect text-lg px-8 py-6"
+              onClick={scrollToForm}
             >
               Book a Free Strategy Call
             </Button>
