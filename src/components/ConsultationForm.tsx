@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { 
   Form, 
@@ -42,11 +41,36 @@ const desiredResultOptions = [
 ];
 
 const timeZones = [
-  'GMT-12:00', 'GMT-11:00', 'GMT-10:00', 'GMT-09:00', 'GMT-08:00', 
-  'GMT-07:00', 'GMT-06:00', 'GMT-05:00', 'GMT-04:00', 'GMT-03:00', 
-  'GMT-02:00', 'GMT-01:00', 'GMT+00:00', 'GMT+01:00', 'GMT+02:00', 
-  'GMT+03:00', 'GMT+04:00', 'GMT+05:00', 'GMT+06:00', 'GMT+07:00', 
-  'GMT+08:00', 'GMT+09:00', 'GMT+10:00', 'GMT+11:00', 'GMT+12:00'
+  {
+    region: "North America",
+    zones: [
+      "America/New_York (EST)",
+      "America/Chicago (CST)",
+      "America/Denver (MST)",
+      "America/Los_Angeles (PST)",
+      "America/Anchorage (AKST)",
+      "Pacific/Honolulu (HST)"
+    ]
+  },
+  {
+    region: "Europe",
+    zones: [
+      "Europe/London (GMT)",
+      "Europe/Paris (CET)",
+      "Europe/Helsinki (EET)",
+      "Europe/Moscow (MSK)"
+    ]
+  },
+  {
+    region: "Asia/Pacific",
+    zones: [
+      "Asia/Dubai (GST)",
+      "Asia/Singapore (SGT)",
+      "Asia/Tokyo (JST)",
+      "Australia/Sydney (AEST)",
+      "Pacific/Auckland (NZST)"
+    ]
+  }
 ];
 
 const ConsultationForm = () => {
@@ -88,14 +112,30 @@ const ConsultationForm = () => {
     }
   }, [detectedTimeZone, form]);
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast.success("Form submitted successfully! We'll be in touch soon.");
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const response = await fetch('https://waaridh10.app.n8n.cloud/webhook/683f072b-cd65-4434-8419-ac4d18b32357', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      toast.success("Form submitted successfully! We'll be in touch soon.");
+      form.reset();
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error("There was an error submitting the form. Please try again.");
+    }
   }
 
   return (
-    <div className="bg-secondary p-6 rounded-lg">
+    <div className="bg-secondary p-6 rounded-lg" id="consultation-form">
       <h3 className="text-2xl font-semibold mb-6">Book Your Strategy Call</h3>
       
       <Form {...form}>
@@ -242,10 +282,15 @@ const ConsultationForm = () => {
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      {timeZones.map((tz) => (
-                        <SelectItem key={tz} value={tz}>
-                          {tz}
-                        </SelectItem>
+                      {timeZones.map((region) => (
+                        <SelectGroup key={region.region}>
+                          <SelectLabel>{region.region}</SelectLabel>
+                          {region.zones.map((zone) => (
+                            <SelectItem key={zone} value={zone}>
+                              {zone}
+                            </SelectItem>
+                          ))}
+                        </SelectGroup>
                       ))}
                     </SelectContent>
                   </Select>

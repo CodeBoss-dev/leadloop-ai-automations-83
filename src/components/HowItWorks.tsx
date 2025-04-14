@@ -52,14 +52,20 @@ const HowItWorks = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto relative">
           {steps.map((step, index) => (
             <div key={index} className="relative">
               {index < steps.length - 1 && (
-                <div className="absolute top-16 left-full w-full h-0.5 bg-mintGreen/20 hidden md:block" style={{ width: "calc(100% - 3rem)" }}></div>
+                <div 
+                  className="absolute top-16 left-[calc(50%+2rem)] w-full h-0.5 bg-mintGreen/20 hidden md:block -z-10" 
+                  style={{ 
+                    width: "calc(100% - 1rem)",
+                    transform: "translateX(-50%)" 
+                  }}
+                />
               )}
               <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mb-6">
+                <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mb-6 relative z-10">
                   {step.icon}
                 </div>
                 <div className="text-sm text-mintGreen font-medium mb-2">{step.number}</div>

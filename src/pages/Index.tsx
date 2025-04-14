@@ -7,17 +7,21 @@ import ProjectShowcase from '@/components/ProjectShowcase';
 import WhyClients from '@/components/WhyClients';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 
 const Index = () => {
   return (
     <div className="bg-dark min-h-screen">
-      <Hero />
-      <UseCasesGrid />
-      <HowItWorks />
-      <ProjectShowcase />
-      <WhyClients />
-      <CallToAction />
-      <Footer />
+      <Navbar />
+      <div className="pt-16"> {/* Add padding top to account for fixed navbar */}
+        <Hero />
+        <UseCasesGrid />
+        <HowItWorks />
+        <ProjectShowcase />
+        <WhyClients />
+        <CallToAction />
+        <Footer />
+      </div>
     </div>
   );
 };

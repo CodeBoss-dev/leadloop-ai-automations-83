@@ -19,8 +19,6 @@ const Footer = () => {
             <div className="mt-12">
               <div className="text-sm text-softGray/70">© {new Date().getFullYear()} LeadLoop. All rights reserved.</div>
               <div className="flex space-x-6 mt-4">
-                <a href="#" className="text-softGray hover:text-mintGreen">Privacy</a>
-                <a href="#" className="text-softGray hover:text-mintGreen">Terms</a>
                 <a href="#" className="text-softGray hover:text-mintGreen">Contact</a>
               </div>
             </div>
