@@ -8,11 +8,11 @@ const Footer = () => {
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <h2 className="text-3xl font-bold mb-2">
-              <span className="text-mintGreen">Genoxys</span>
-            </h2>
-            <div className="text-center mb-6">
-              <span className="font-russo text-mintGreen/80 text-sm tracking-widest">AUTOMATION</span>
+            <div className="flex flex-col items-start mb-6">
+              <h2 className="text-3xl font-bold">
+                <span className="text-mintGreen">Genoxys</span>
+              </h2>
+              <span className="font-russo text-mintGreen/80 text-xs tracking-widest -mt-1">AUTOMATION</span>
             </div>
             <p className="text-lg mb-6 max-w-md">
               Automated lead qualification solutions that identify your best prospects 

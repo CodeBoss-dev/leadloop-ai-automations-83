@@ -18,7 +18,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0">
-            <span className="text-2xl font-bold text-mintGreen">Genoxys</span>
+            <div className="flex flex-col items-center">
+              <span className="text-2xl font-bold text-mintGreen">Genoxys</span>
+              <span className="font-russo text-mintGreen/80 text-[10px] tracking-widest -mt-1">AUTOMATION</span>
+            </div>
           </div>
           <Button 
             onClick={scrollToForm}
