@@ -14,7 +14,7 @@ const VideoSection = () => {
           <div className="pb-[56.25%] relative">
             <iframe
               className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+              src="https://www.youtube.com/embed/D8IydyNvUpM" 
               title="Genoxys Automation Demo"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
