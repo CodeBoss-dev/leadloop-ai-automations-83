@@ -66,6 +66,7 @@ const timeZones = [
     zones: [
       "Europe/London (GMT)",
       "Europe/Paris (CET)",
+      "Europe/Berlin (CET)",
       "Europe/Helsinki (EET)",
       "Europe/Moscow (MSK)"
     ]
@@ -74,10 +75,30 @@ const timeZones = [
     region: "Asia/Pacific",
     zones: [
       "Asia/Dubai (GST)",
+      "Asia/Kolkata (IST)",
+      "Asia/Karachi (PKT)",
+      "Asia/Bangkok (ICT)",
+      "Asia/Shanghai (CST)",
       "Asia/Singapore (SGT)",
       "Asia/Tokyo (JST)",
       "Australia/Sydney (AEST)",
       "Pacific/Auckland (NZST)"
+    ]
+  },
+  {
+    region: "South America",
+    zones: [
+      "America/Sao_Paulo (BRT)",
+      "America/Buenos_Aires (ART)",
+      "America/Santiago (CLT)"
+    ]
+  },
+  {
+    region: "Africa/Middle East",
+    zones: [
+      "Africa/Cairo (EET)",
+      "Africa/Johannesburg (SAST)",
+      "Africa/Nairobi (EAT)"
     ]
   }
 ];
