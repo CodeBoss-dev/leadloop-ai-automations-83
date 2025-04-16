@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import UseCasesGrid from '@/components/UseCasesGrid';
 import HowItWorks from '@/components/HowItWorks';
 import ProjectShowcase from '@/components/ProjectShowcase';
+import VideoSection from '@/components/VideoSection';
 import WhyClients from '@/components/WhyClients';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
@@ -16,6 +17,7 @@ const Index = () => {
       <div className="pt-16"> {/* Add padding top to account for fixed navbar */}
         <Hero />
         <UseCasesGrid />
+        <VideoSection />
         <HowItWorks />
         <ProjectShowcase />
         <WhyClients />
