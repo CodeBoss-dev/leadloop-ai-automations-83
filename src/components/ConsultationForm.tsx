@@ -144,7 +144,7 @@ const ConsultationForm = () => {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      const response = await fetch('https://waaridh10.app.n8n.cloud/webhook/683f072b-cd65-4434-8419-ac4d18b32357', {
+      const response = await fetch('https://hook.eu2.make.com/h1r71hd5gmzutq9l0drxw2qy8t6csq5j', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
